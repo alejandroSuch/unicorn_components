@@ -5,6 +5,11 @@ Unicorn Components
 
 <a target="_blank" href="https://travis-ci.org/nitsnets/unicorn_components"><img src="https://travis-ci.org/nitsnets/unicorn_components.svg?branch=master" align="right"></a>
 
+<a href="https://badge.fury.io/js/%40unicorn.io%2Fcomponents"><img src="https://badge.fury.io/js/%40unicorn.io%2Fcomponents.svg" align="right"></a>
+
+<a target="_blank" href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" align="right"></a>
+
+
 
 Angular UI components kit of [Unicorn Platform][unicorn].
 
@@ -49,7 +54,7 @@ http://components.servidorbeta.com
 
 ## List of components
 
-| Grupo          | Componente        | Nomenclatura              | Estado              | + Info 
+| Group          | Component         | Naming                    | Status              | + Info 
 | -------------- | ----------------- | ------------------------- | ------------------- | ------- 
 | **Charts**     | Chart             | `<uni-chart>`             | :large_blue_circle: | [+ Info][charts/chart]
 | "              | Legend            | `<uni-chart-legend>`      | :large_blue_circle: | [+ Info][charts/chart-legend]
@@ -153,7 +158,7 @@ http://components.servidorbeta.com
 [forms/time-picker]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/forms/time-picker
 [forms/toggle]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/forms/toggle
 [ui/button]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button
-[ui/button-file]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button
+[ui/button-file]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button-file
 [ui/button-group]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button-group
 [ui/button-header]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button-header
 [ui/button-menu]: https://github.com/nitsnets/unicorn_components/tree/master/src/components/ui/button-menu
