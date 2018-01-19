@@ -1,0 +1,184 @@
+<h3>Inputs</h3>
+<uni-separator></uni-separator>
+
+<h5>Single-line inputs</h5>
+<div>
+    <uni-input [(model)]="inputModel" label="Default input"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with placeholder" placeholder="Input placeholder"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with icon" placeholder="Input placeholder" icon="person"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with icon and clear" iconRight="person" [clear]="true"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with hint" placeholder="Input placeholder" hint="i.e: user@domain.com"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with error" placeholder="Input placeholder" error="Must be a valid email"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with prefix" placeholder="Input placeholder" prefixIcon="lock"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with suffix" placeholder="Input placeholder" suffix=".com"></uni-input>
+</div>
+<div>
+    <uni-input [(model)]="inputModel" label="Input with counter" counter="true"></uni-input>
+    <uni-input [(model)]="inputModel" label="Counter and max" max="10" counter="true"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with right icon" placeholder="Input placeholder" iconRight="person"></uni-input>
+    <uni-input [(model)]="inputModel" label="Floating label" floating="true"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with mask (alpha)" mask="(999) 999-999"></uni-input>
+    <uni-input [(model)]="inputModel" label="Input with debounce" [debounce]="200"></uni-input>
+</div>
+<h5>Multi-line inputs</h5>
+<uni-input [(model)]="inputModel" placeholder="Input placeholder" label="Multiline input" multiline="true">
+</uni-input>
+<uni-textarea [(model)]="inputModel" placeholder="Here you can see all the available options of multiline input activated"
+    label="Multiline input" multiline="true" counter="true" max="140" error="Something went wrong" hint="Write something above">
+</uni-textarea>
+
+<h5>Select inputs </h5>
+<div>
+    <uni-select label="Default select" [(model)]="selectModel" [options]="[
+        {value: 1, label: 'Option 1'},
+        {value: 2, label: 'Option 2'},
+        {value: 3, label: 'Option 3'},
+        {value: 4, label: 'Option 4'},
+        {value: 5, label: 'Option 5'}
+    ]">
+    </uni-select>
+    <uni-select label="Many options select" [(model)]="selectModel" [options]="manyOptions">
+    </uni-select>
+    <uni-select label="Select with placeholder" placeholder="Select placeholder" [(model)]="selectModel" [options]="[
+        {value: 1, label: 'Option 1'},
+        {value: 2, label: 'Option 2'},
+        {value: 3, label: 'Option 3'},
+        {value: 4, label: 'Option 4'},
+        {value: 5, label: 'Option 5'}
+    ]">
+    </uni-select>
+    <uni-select label="Select with icon" icon="person" [(model)]="selectModel" [options]="[
+        {value: 1, label: 'Option 1'},
+        {value: 2, label: 'Option 2'},
+        {value: 3, label: 'Option 3'},
+        {value: 4, label: 'Option 4'},
+        {value: 5, label: 'Option 5'}
+    ]">
+    </uni-select>
+    <uni-select label="Select with multiple options" [(model)]="selectModel2" [multiple]="true" [options]="[
+        {value: 1, label: 'Option 1'},
+        {value: 2, label: 'Option 2'},
+        {value: 3, label: 'Option 3'},
+        {value: 4, label: 'Option 4'},
+        {value: 5, label: 'Option 5'}
+    ]">
+    </uni-select>
+</div>
+<div>
+    <uni-select label="Select with chips" [(model)]="selectModel2" [multiple]="true" [chips]="true" [options]="[
+        {value: 1, label: 'Option 1'},
+        {value: 2, label: 'Option 2'},
+        {value: 3, label: 'Option 3'},
+        {value: 4, label: 'Option 4'},
+        {value: 5, label: 'Option 5'}
+    ]">
+    </uni-select>
+</div>
+
+<h5>Radio inputs</h5>
+<div>
+    <uni-radio [(model)]="radioModel" value="0" label="Option 1"></uni-radio>
+    <uni-radio [(model)]="radioModel" value="1" label="Option 2"></uni-radio>
+    <uni-radio [(model)]="radioModel" value="2" label="Custom <strong>HTML</strong> label"></uni-radio>
+</div>
+
+<h5>Radio group with debounce</h5>
+<div>
+    <uni-radio-group [(model)]="radioModel" debounce="1000" value="1">
+        <uni-radio value="0" label="Option 1"></uni-radio>
+        <uni-radio value="1" label="Option 2"></uni-radio>
+        <uni-radio value="2" label="Option 3"></uni-radio>
+    </uni-radio-group>
+</div>
+
+<h5>Checkbox inputs</h5>
+<div>
+    <uni-checkbox label="hola" [disabled]="true" [(model)]="checkboxModel"></uni-checkbox>
+    <uni-checkbox [(model)]="checkboxModel"></uni-checkbox>
+    <uni-checkbox [(model)]="checkboxModel" [partial]="true"></uni-checkbox>
+    <uni-checkbox [(model)]="checkboxModel" label="Checkbox with label"></uni-checkbox>
+    <uni-checkbox [(model)]="checkboxModel" label="Checkbox with partial" [partial]="true"></uni-checkbox>
+    <uni-checkbox [(model)]="checkboxModel" label="Custom <strong>HTML</strong> label"></uni-checkbox>
+</div>
+<h5>Toggle inputs</h5>
+<div>
+    <uni-toggle [(model)]="toggleModel" label="Toggle with label"></uni-toggle>
+    <uni-toggle [(model)]="toggleModel" label="Toggle squared with label" [rounded]="false"></uni-toggle>
+</div>
+<div>
+    <uni-toggle color="primary" [(model)]="toggleModel"></uni-toggle>
+    <uni-toggle color="success" [(model)]="toggleModel"></uni-toggle>
+    <uni-toggle color="warning" [(model)]="toggleModel"></uni-toggle>
+    <uni-toggle color="error" [(model)]="toggleModel"></uni-toggle>
+</div>
+<div>
+    <uni-toggle size="small" [(model)]="toggleModel" label="Small toggle with label"></uni-toggle>
+    <uni-toggle size="small" [(model)]="toggleModel" label="Small toggle squared with label" [rounded]="false"></uni-toggle>
+</div>
+
+<h5>Button toggle inputs</h5>
+<div>
+    <uni-button-toggle label="Button toggle" [(model)]="toggleModel"></uni-button-toggle>
+    <uni-button-toggle label="Button toggle" color="default" [(model)]="toggleModel"></uni-button-toggle>
+    <uni-button-toggle label="Button toggle" color="light" [(model)]="toggleModel"></uni-button-toggle>
+    <uni-button-toggle label="Button toggle" color="primary" [(model)]="toggleModel"></uni-button-toggle>
+    <uni-button-toggle label="Button toggle" color="success" [(model)]="toggleModel"></uni-button-toggle>
+    <uni-button-toggle label="Button toggle" color="warning" [(model)]="toggleModel"></uni-button-toggle>
+    <uni-button-toggle label="Button toggle" color="error" [(model)]="toggleModel"></uni-button-toggle>
+</div>
+
+<h5>Button toggle group</h5>
+<div>
+    <uni-button-toggle-group [(model)]="radioModel">
+        <uni-button-toggle label="Button toggle 2" color="default" value="0"></uni-button-toggle>
+        <uni-button-toggle label="Button toggle 3" color="default" value="1"></uni-button-toggle>
+        <uni-button-toggle label="Button toggle 4" color="default" value="2"></uni-button-toggle>
+    </uni-button-toggle-group>
+</div>
+<h5>Sliders</h5>
+<div>
+    <uni-slider [(model)]="sliderModel" debounce="1000"></uni-slider>
+    <uni-slider [(model)]="sliderModel" color="success"></uni-slider>
+</div>
+<div>
+    <uni-slider [(model)]="sliderModel" color="error" label="Slider con nombre"></uni-slider>
+</div>
+<h5>Slider range</h5>
+<div>
+    <uni-slider-range [(model)]="sliderRangeModel" color="primary" debounce="1000"></uni-slider-range>
+    {{sliderRangeModel | json}}
+</div>
+<h5>Date-time picker</h5>
+<div>
+    <uni-date-picker label="Date picker"> </uni-date-picker>
+</div>
+<div>
+    <uni-time-picker label="Time picker"> </uni-time-picker>
+</div>
+<div>
+    <uni-date-picker label="Min and max date" min="2017-02-01" max="2017-02-26"> </uni-date-picker>
+</div>
+<div>
+    <uni-time-picker label="Min max time" min="8:00" max="17:15"> </uni-time-picker>
+</div>
+<div>
+    <uni-date-picker label="Inline calendar" [floating]="false"> </uni-date-picker>
+</div>
+<div>
+    <uni-datetime-picker dateLabel="Date picker" timeLabel="With time picker"> </uni-datetime-picker>
+</div>
+
+<h5>Daterange picker</h5>
+<div>
+    <uni-daterange-picker> </uni-daterange-picker>
+</div>
+<div>
+    <uni-daterange-picker [combo]="true"> </uni-daterange-picker>
+</div>
+<div>
+    <uni-daterange-picker [combo]="true" [showArrows]="true" min="2017-07-01" max="2017-07-30"> </uni-daterange-picker>
+</div>
+<h5>Image picker</h5>
+<div>
+    <uni-image-picker [(model)]="image" height="150"></uni-image-picker>
+</div>

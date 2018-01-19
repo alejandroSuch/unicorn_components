@@ -1,0 +1,305 @@
+<h3>Other</h3>
+<uni-separator></uni-separator>
+<h5>Badges</h5>
+<div class="flex">
+    <uni-badge label="1" color="primary"> </uni-badge>
+    <uni-badge label="1" color="success"> </uni-badge>
+    <uni-badge label="1" color="error"> </uni-badge>
+    <uni-badge label="1" color="warning"> </uni-badge>
+</div>
+<h5>Chips</h5>
+<div class="flex">
+    <uni-chip label="regular chip"> </uni-chip>
+    <uni-chip label="removable chip" [removable]="true" (remove)="removed1 = true" *ngIf="!removed1"> </uni-chip>
+    <uni-chip label="primary chip" color="primary" [removable]="true" (remove)="removed2 = true" *ngIf="!removed2"> </uni-chip>
+    <uni-chip label="success chip" color="success" [removable]="true" (remove)="removed3 = true" *ngIf="!removed3"> </uni-chip>
+    <uni-chip label="error chip" color="error" [removable]="true" (remove)="removed4 = true" *ngIf="!removed4"> </uni-chip>
+    <uni-chip label="warning chip" color="warning" [removable]="true" (remove)="removed5 = true" *ngIf="!removed5"> </uni-chip>
+</div>
+<h5>Progress bar</h5>
+<uni-progress value="0"></uni-progress>
+<uni-progress value="0" [showPercentage]="true"></uni-progress>
+<uni-progress value="30"></uni-progress>
+<uni-progress value="30" [showPercentage]="true"></uni-progress>
+<uni-progress color="primary" value="20"></uni-progress>
+<uni-progress color="primary" value="20" [showPercentage]="true"></uni-progress>
+<uni-progress color="success" value="40"></uni-progress>
+<uni-progress color="success" value="40" [showPercentage]="true"></uni-progress>
+<uni-progress color="warning" value="70"></uni-progress>
+<uni-progress color="warning" value="70" [showPercentage]="true"></uni-progress>
+<uni-progress color="error" value="10" [showPercentage]="true"></uni-progress>
+<uni-progress color="error" value="10" [showCount]="true"></uni-progress>
+
+<h5>Spinners</h5>
+<div class="flex">
+    <uni-spinner size="small"> </uni-spinner>
+    <uni-spinner size="small" color="primary"> </uni-spinner>
+    <uni-spinner size="small" color="error"> </uni-spinner>
+    <uni-spinner size="small" color="warning"> </uni-spinner>
+    <uni-spinner> </uni-spinner>
+    <uni-spinner color="primary"> </uni-spinner>
+    <uni-spinner color="error"> </uni-spinner>
+    <uni-spinner color="warning"> </uni-spinner>
+    <uni-spinner size="big"> </uni-spinner>
+    <uni-spinner size="big" color="primary"> </uni-spinner>
+    <uni-spinner size="big" color="error"> </uni-spinner>
+    <uni-spinner size="big" color="warning"> </uni-spinner>
+</div>
+<div class="flex">
+    <uni-spinner type="dots" size="small"> </uni-spinner>
+    <uni-spinner type="dots" size="small" color="primary"> </uni-spinner>
+    <uni-spinner type="dots" size="small" color="error"> </uni-spinner>
+    <uni-spinner type="dots" size="small" color="warning"> </uni-spinner>
+    <uni-spinner type="dots" size="big"> </uni-spinner>
+    <uni-spinner type="dots" size="big" color="primary"> </uni-spinner>
+    <uni-spinner type="dots" size="big" color="error"> </uni-spinner>
+    <uni-spinner type="dots" size="big" color="warning"> </uni-spinner>
+</div>
+
+<h5>Alerts</h5>
+<uni-alert>
+    Voluptate adipisicing sit qui cupidatat est exercitation consectetur laborum exercitation occaecat ullamco.
+</uni-alert>
+<uni-alert color="primary">
+    Voluptate adipisicing sit qui cupidatat est exercitation consectetur laborum exercitation occaecat ullamco.
+</uni-alert>
+<uni-alert icon="check" color="success">
+    Voluptate adipisicing sit qui cupidatat est exercitation consectetur laborum exercitation occaecat ullamco.
+</uni-alert>
+<uni-alert icon="star" color="warning">
+    Voluptate adipisicing sit qui cupidatat est exercitation consectetur laborum exercitation occaecat ullamco.
+</uni-alert>
+<uni-alert icon="delete" color="error">
+    Voluptate adipisicing sit qui cupidatat est exercitation consectetur laborum exercitation occaecat ullamco.
+</uni-alert>
+
+<h5>Faces</h5>
+<div class="flex">
+    <uni-face [user]="{name: 'Alvaro'}"> </uni-face>
+    <uni-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}"> </uni-face>
+    <uni-face [user]="{name: 'Alvaro', image: 'https://placekitten.com/g/200/200'}" badge="1"> </uni-face>
+</div>
+
+<h5>Tooltip</h5>
+<div class="flex">
+    <uni-button label="Open Tooltip" icon="chat_bubble_outline" (mouseover)="openTooltip($event)" (mouseout)="closeTooltip()"></uni-button>
+    <uni-button label="Open Tooltip" iconRight="keyboard_arrow_right" uniTooltip="Tooltip opened by a Directive"></uni-button>
+    <uni-button label="Open Tooltip" icon="keyboard_arrow_down" orientation="bottom" uniTooltip="Tooltip opened by a Directive"></uni-button>
+    <uni-button label="Open Tooltip" icon="keyboard_arrow_left" orientation="left" uniTooltip="Tooltip opened by a Directive"></uni-button>
+</div>
+
+<h5>Toast</h5>
+<div class="flex">
+    <uni-button label="Open toast" icon="open" color="primary" (click)="openToast()"></uni-button>
+</div>
+
+<h3>Icons</h3>
+
+<span class="icon-wrap">
+    <uni-icon icon="ac_unit"></uni-icon>
+    <span>ac_unit</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="alarm"></uni-icon>
+    <span>alarm</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="access_alarms"></uni-icon>
+    <span>access_alarms</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="schedule"></uni-icon>
+    <span>schedule</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="accessibility"></uni-icon>
+    <span>accessibility</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="accessible"></uni-icon>
+    <span>accessible</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="account_balance"></uni-icon>
+    <span>account_balance</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="account_balance_wallet"></uni-icon>
+    <span>account_balance_wallet</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="account_box"></uni-icon>
+    <span>account_box</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="account_circle"></uni-icon>
+    <span>account_circle</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="adb"></uni-icon>
+    <span>adb</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="add"></uni-icon>
+    <span>add</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="add_a_photo"></uni-icon>
+    <span>add_a_photo</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="alarm_add"></uni-icon>
+    <span>alarm_add</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="add_alert"></uni-icon>
+    <span>add_alert</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="add_box"></uni-icon>
+    <span>add_box</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="add_circle"></uni-icon>
+    <span>add_circle</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="control_point"></uni-icon>
+    <span>control_point</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="add_location"></uni-icon>
+    <span>add_location</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="add_shopping_cart"></uni-icon>
+    <span>add_shopping_cart</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="queue"></uni-icon>
+    <span>queue</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="add_to_queue"></uni-icon>
+    <span>add_to_queue</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="adjust"></uni-icon>
+    <span>adjust</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airline_seat_flat"></uni-icon>
+    <span>airline_seat_flat</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airline_seat_flat_angled"></uni-icon>
+    <span>airline_seat_flat_angled</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airline_seat_individual_suite"></uni-icon>
+    <span>airline_seat_individual_suite</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airline_seat_legroom_extra"></uni-icon>
+    <span>airline_seat_legroom_extra</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airline_seat_legroom_normal"></uni-icon>
+    <span>airline_seat_legroom_normal</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airline_seat_legroom_reduced"></uni-icon>
+    <span>airline_seat_legroom_reduced</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airline_seat_recline_extra"></uni-icon>
+    <span>airline_seat_recline_extra</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airline_seat_recline_normal"></uni-icon>
+    <span>airline_seat_recline_normal</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="flight"></uni-icon>
+    <span>flight</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airplanemode_inactive"></uni-icon>
+    <span>airplanemode_inactive</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airplay"></uni-icon>
+    <span>airplay</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="airport_shuttle"></uni-icon>
+    <span>airport_shuttle</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="alarm_off"></uni-icon>
+    <span>alarm_off</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="alarm_on"></uni-icon>
+    <span>alarm_on</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="album"></uni-icon>
+    <span>album</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="all_inclusive"></uni-icon>
+    <span>all_inclusive</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="all_out"></uni-icon>
+    <span>all_out</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="android"></uni-icon>
+    <span>android</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="announcement"></uni-icon>
+    <span>announcement</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="apps"></uni-icon>
+    <span>apps</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="archive"></uni-icon>
+    <span>archive</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="arrow_back"></uni-icon>
+    <span>arrow_back</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="arrow_downward"></uni-icon>
+    <span>arrow_downward</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="arrow_drop_down"></uni-icon>
+    <span>arrow_drop_down</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="arrow_drop_down_circle"></uni-icon>
+    <span>arrow_drop_down_circle</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="arrow_drop_up"></uni-icon>
+    <span>arrow_drop_up</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="arrow_forward"></uni-icon>
+    <span>arrow_forward</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="arrow_upward"></uni-icon>
+    <span>arrow_upward</span>
+</span>
+<span class="icon-wrap">
+    <uni-icon icon="art_track"></uni-icon>
+    <span>art_track</span>
+</span>

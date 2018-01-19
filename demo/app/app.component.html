@@ -1,0 +1,20 @@
+<uni-header>
+    <img class="header-logo" src="assets/img/logo.png" alt="">
+    <h1 class="header-title">Components</h1>
+    <uni-tabs class="uni-tabs--no-border header-tabs" [tabSelected]="tabSelected" [tabs]="[
+      {label: 'Typography', value: 'typo'},
+      {label: 'Containers', value: 'containers'},
+      {label: 'Buttons', value: 'buttons'},
+      {label: 'Forms', value: 'forms'},
+      {label: 'Charts', value: 'charts'},
+      {label: 'Data', value: 'data'},
+      {label: 'Utils', value: 'utils'}
+    ]" (tabSelectedChange)="onTabSelected($event)">
+    </uni-tabs>
+</uni-header>
+
+<uni-layout class="has-header">
+    <uni-body class="uni-body--full-width">
+        <router-outlet></router-outlet>
+    </uni-body>
+</uni-layout>

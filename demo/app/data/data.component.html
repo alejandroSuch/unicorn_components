@@ -1,0 +1,96 @@
+<h3>Datagrids</h3>
+<uni-separator></uni-separator>
+
+<h5>Simple datagrids</h5>
+<uni-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)">
+    <uni-datagrid-column title="First name" field="name"></uni-datagrid-column>
+    <uni-datagrid-column title="Date of birth" field="birth"></uni-datagrid-column>
+    <uni-datagrid-column title="Progress" field="progress"></uni-datagrid-column>
+    <uni-datagrid-column title="Alerts" field="alerts"></uni-datagrid-column>
+</uni-datagrid>
+
+<h5>Cell formats</h5>
+<uni-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" [sortable]="false" [highlightRow]="false">
+    <uni-datagrid-column title="First name" field="name" width="3"></uni-datagrid-column>
+    <uni-datagrid-column title="Date of birth" field="birth" format="date"></uni-datagrid-column>
+    <uni-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></uni-datagrid-column>
+    <uni-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error', align: 'center'}"></uni-datagrid-column>
+</uni-datagrid>
+
+<h5>Custom cells</h5>
+<uni-datagrid [data]="data" (cellClick)="log('Cell clicked', $event)" (rowClick)="log('Row clicked', $event)" [highlightCell]="true"
+    [highlightRow]="false">
+    <uni-datagrid-column field="img" format="image" [sortable]="false" width="0.2"></uni-datagrid-column>
+    <uni-datagrid-column title="First name" field="name" sort="asc">
+        <uni-datagrid-cell *cellVariables="let user;">
+            <strong>{{user.name}}</strong>
+            <p>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
+        </uni-datagrid-cell>
+    </uni-datagrid-column>
+    <uni-datagrid-column title="Date of birth" field="birth" [highlightCell]="false" [clickPropagation]="false">
+        <uni-datagrid-cell *cellVariables="let user">
+            <uni-icon icon="date_range"></uni-icon>
+            <span>{{user.birth | formatDate : 'ddd DD MMM, YYYY'}}</span>
+        </uni-datagrid-cell>
+    </uni-datagrid-column>
+    <uni-datagrid-column title="Progress" field="progress" format="progress" [formatOptions]="{total: 1, color: 'success'}"></uni-datagrid-column>
+    <uni-datagrid-column title="Alerts" field="alerts" format="badge" [formatOptions]="{color: 'error'}" [sortable]="false" width="0.15"></uni-datagrid-column>
+    <uni-datagrid-column [sortable]="false" [clickPropagation]="false" [highlightCell]="false">
+        <uni-datagrid-cell *cellVariables="let user">
+            <uni-row>
+                <uni-input placeholder="units" [(model)]="user.units"></uni-input>
+                <uni-button label="Add to cart" color="primary" size="small" (click)="log('Add to cart', {user: user, units: user['units']})"></uni-button>
+            </uni-row>
+        </uni-datagrid-cell>
+    </uni-datagrid-column>
+</uni-datagrid>
+
+<h5>Custom rows</h5>
+<uni-datagrid [data]="data" [highlightCell]="true" [pageable]="true" [pageSize]="5" [deletable]="true" deleteConfirm="modal">
+    <uni-datagrid-column title="First name" field="name"></uni-datagrid-column>
+    <uni-datagrid-column title="Date of birth" field="birth"></uni-datagrid-column>
+    <uni-datagrid-column title="Progress" field="progress"></uni-datagrid-column>
+    <uni-datagrid-column title="Alerts" field="alerts"></uni-datagrid-column>
+
+    <uni-datagrid-row *rowVariables="let user; let i = i">
+        <uni-datagrid-cell>
+            <h3>{{i+1}}. {{user?.name}}</h3>
+        </uni-datagrid-cell>
+        <uni-datagrid-cell width="3">
+            <p>{{user?.birth | formatDate : 'ddd DD MMM, YYYY'}}</p>
+        </uni-datagrid-cell>
+    </uni-datagrid-row>
+</uni-datagrid>
+
+<h5>Selectable, pageable and filterable datagrids</h5>
+<uni-filters [savable]="true" (save)="log('save', $event)">
+    <uni-filters-main>
+        <uni-input name="name" placeholder="First name" debounce="300" value="Default value"></uni-input>
+        <uni-date-picker name="birth" placeholder="Date of birth"></uni-date-picker>
+        <uni-select name="progress" placeholder="Progress" value="0-24" [options]="[
+            {value: '0-24', label: '0 - 24%'},
+            {value: '25-49', label: '25 - 49%'},
+            {value: '50-74', label: '50 - 74%'},
+            {value: '75-100', label: '75 - 100%'}
+        ]"></uni-select>
+        <uni-checkbox name="alerts" label="With alerts"></uni-checkbox>
+    </uni-filters-main>
+    <uni-filters-advanced>
+        <uni-input name="extra1" placeholder="Extra filter 1" debounce="300" value="Default extra value"></uni-input>
+        <uni-input name="extra2" placeholder="Extra filter 2" debounce="300"></uni-input>
+        <uni-input name="extra3" placeholder="Extra filter 3" debounce="300"></uni-input>
+        <uni-input name="extra4" placeholder="Extra filter 4" debounce="300"></uni-input>
+        <uni-input name="extra5" placeholder="Extra filter 5" debounce="300"></uni-input>
+        <uni-input name="extra6" placeholder="Extra filter 6" debounce="300"></uni-input>
+    </uni-filters-advanced>
+</uni-filters>
+
+<uni-datagrid [data]="longData" [selectable]="true" [pageable]="true" [pageSize]="6" [deletable]="true" (delete)="log('Delete', $event)">
+    <uni-datagrid-column title="First name" field="name" [highlightCell]="true"></uni-datagrid-column>
+    <uni-datagrid-column title="Date of birth" field="birth"></uni-datagrid-column>
+    <uni-datagrid-column title="Progress" field="progress" format="percentage"></uni-datagrid-column>
+    <uni-datagrid-column title="Alerts" field="alerts" [sortable]="false"></uni-datagrid-column>
+</uni-datagrid>
+
+<h3>Lists</h3>
+<uni-list [data]="data" [sortable]="true" [selectable]="true" [deletable]="true" (delete)="log('delete', $event)"></uni-list>

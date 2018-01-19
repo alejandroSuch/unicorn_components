@@ -62,6 +62,6 @@ const compileSass = (path, ext, file, cb) => {
     cb(null, compiledCss.css);
 };
 const prepareImports = () => replace('import * as moment from', 'import moment from');
-const compile = cb => exec('./node_modules/.bin/ngc -p tsconfig.app.json', err => cb(err));
+const compile = cb => exec('./node_modules/.bin/ngc -p tsconfig.dist.json', err => cb(err));
 const bundle = cb => exec('./node_modules/.bin/rollup -c', err => cb(err));
 const publish = cb => exec('npm publish', { cwd: dist }, err => cb(err));

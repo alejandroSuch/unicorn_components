@@ -1,0 +1,120 @@
+<h3>
+    Containers
+</h3>
+<h5>Accordion</h5>
+
+<uni-accordion mode="single">
+    <uni-accordion-item label="Item number one">
+        Quis id nostrud sit cupidatat magna dolor commodo ullamco deserunt id est laboris pariatur. Quis consectetur esse ullamco
+        Lorem sunt consequat exercitation eiusmod enim non amet tempor tempor. Lorem dolor ipsum sint et ut ut magna eu dolore.
+        Mollit consequat laboris occaecat veniam do magna culpa amet magna elit ut id nulla ea. Culpa labore minim elit officia
+        ea minim cupidatat. Lorem duis fugiat fugiat exercitation ut incididunt incididunt.
+    </uni-accordion-item>
+    <uni-accordion-item label="Item number two">
+        Exercitation officia culpa occaecat mollit officia pariatur. Minim minim sunt pariatur ad laborum commodo sunt mollit nulla.
+        Pariatur eu eiusmod reprehenderit elit qui ad nostrud laboris ad incididunt do do et. Amet adipisicing mollit et
+        tempor est deserunt aute incididunt nostrud sunt qui anim. Sit voluptate aliquip consequat velit quis amet officia
+        est sit eiusmod aute.
+    </uni-accordion-item>
+    <uni-accordion-item label="Item number three">
+        Mollit velit nostrud commodo tempor minim ad anim proident velit tempor magna elit mollit. Sunt id ipsum sit cillum labore.
+        Aliqua adipisicing eu id ex labore ullamco labore do culpa aliqua et ex. Dolor officia reprehenderit adipisicing
+        consectetur ut qui adipisicing id excepteur cupidatat reprehenderit eu officia magna.
+    </uni-accordion-item>
+    <uni-accordion-item label="Item number four" [menu]="true" [collapsed]="collapsed" (collapsedChange)="log('Colapsed changed: ' + $event)">
+        <ng-container uni-accordion-content>
+            Et commodo reprehenderit quis fugiat in sit ut veniam. Dolore Lorem aliqua dolore duis nostrud deserunt nulla minim tempor
+            eu quis. Exercitation ipsum sit officia et consequat et anim ad elit occaecat excepteur cupidatat. Sint ex sint
+            ullamco laboris.
+        </ng-container>
+        <ng-container uni-accordion-menu>
+            <uni-menu-item label="Option 1" icon="check"></uni-menu-item>
+            <uni-menu-item label="Option 2" icon="close"></uni-menu-item>
+            <uni-menu-item label="Option 3" icon="delete"></uni-menu-item>
+        </ng-container>
+    </uni-accordion-item>
+</uni-accordion>
+
+<h5>Menu</h5>
+<uni-menu>
+    <uni-button uniMenuTrigger icon="more_vert"></uni-button>
+    <uni-menu-container>
+        <uni-menu-item label="Option 1" icon="check"></uni-menu-item>
+        <uni-menu-item label="Option 2" icon="check"></uni-menu-item>
+        <uni-menu-item label="Option 3" icon="check"></uni-menu-item>
+    </uni-menu-container>
+</uni-menu>
+
+<h5>Modal</h5>
+<div class="flex">
+    <uni-button label="Open modal" icon="open" color="default" (click)="openModal({ title: 'Demo Modal' })"></uni-button>
+    <uni-button label="Open modal without header" icon="open" color="default" (click)="openModal({ 'hideHeader': true })"></uni-button>
+    <uni-button color="default" label="Open full-screen modal" icon="open" (click)="openModal({ title: 'Demo Modal', type: 'full'})"></uni-button>
+    <uni-button color="default" label="Open aside modal" icon="open" (click)="openModal({ title: 'Demo Modal', type: 'aside'})"></uni-button>
+</div>
+
+<h5>Popup</h5>
+<uni-popup ([opened])="popupOpened" position="top-right">
+    <span uniPopupTrigger>
+        Clica para abrir el popup
+    </span>
+    <uni-popup-container closable>
+        Contenido del popup
+    </uni-popup-container>
+</uni-popup>
+
+<h5>Paginator</h5>
+<uni-paginator [totalElements]="30" [pageSize]="10" [selected]="pageSelected1 || 0" (selectedChange)="pageSelected1 = $event"></uni-paginator>
+<uni-paginator [totalElements]="150" [pageSize]="9" [selected]="pageSelected2 || 0" (selectedChange)="pageSelected2 = $event"></uni-paginator>
+
+<h5>Tabs</h5>
+<uni-tabs [tabs]="[
+    {label: 'Tab 1'},
+    {label: 'Tab 2'},
+    {label: 'Tab 3'}
+]"></uni-tabs>
+<uni-tabs size="small">
+    <uni-tabs-item label="Tab small 1"></uni-tabs-item>
+    <uni-tabs-item label="Tab small 2"></uni-tabs-item>
+    <uni-tabs-item label="Tab small 3"></uni-tabs-item>
+</uni-tabs>
+
+<h5>Rows</h5>
+<uni-row>
+    <uni-box>
+        Quis id nostrud sit cupidatat magna dolor commodo ullamco deserunt id est laboris pariatur.
+    </uni-box>
+    <uni-box>
+        Aliquip voluptate nulla aliqua dolor sit voluptate dolore sit culpa voluptate commodo.
+    </uni-box>
+</uni-row>
+
+<uni-row vertical>
+    <uni-box>
+        Quis id nostrud sit cupidatat magna dolor commodo ullamco deserunt id est laboris pariatur.
+    </uni-box>
+    <uni-box>
+        Aliquip voluptate nulla aliqua dolor sit voluptate dolore sit culpa voluptate commodo.
+    </uni-box>
+</uni-row>
+
+<h5>Carousel</h5>
+
+<div uniCarousel>
+    <div uniCarouselCell>1</div>
+    <div uniCarouselCell>2</div>
+    <div uniCarouselCell>3</div>
+</div>
+
+<h5>Aside</h5>
+<uni-layout>
+    <uni-aside class="collapsed" position="left">
+        Quis id nostrud sit cupidatat magna dolor commodo ullamco deserunt id est laboris pariatur.
+    </uni-aside>
+    <uni-body>
+        Aliquip voluptate nulla aliqua dolor sit voluptate dolore sit culpa voluptate commodo. In dolor excepteur id incididunt officia do reprehenderit in. Consequat mollit non amet cupidatat velit voluptate velit cillum eu ad.
+    </uni-body>
+    <uni-aside right>
+        Ullamco sunt veniam est mollit.
+    </uni-aside>
+</uni-layout>
